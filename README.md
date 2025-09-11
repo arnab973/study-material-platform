@@ -1,7 +1,10 @@
 Eduvite  is a modern platform designed to revolutionize the way students access and share learning resources. Our goal is to provide a seamless, collaborative, and smarter learning environment where students can organize study materials, exchange knowledge, and grow together.
-What makes Eduvite unique is that it’s created by students, for students. We understand real academic challenges and are building solutions that make learning not only easier but also engaging and future-ready.
-Team / Owners Section - 
-Meet Our Team
+What makes Eduvite unique is that it’s created by students, for students. We understand real academic challenges and are building solutions that make learning not only easier but also engaging and future-ready.\
+
+
+
+Team / Owners Section - \
+Meet Our Team\
 •	Soumak Paul — Frontend Developer
 Focused on delivering smooth user experiences, Soumak ensures EduShare’s design is responsive, modern, and intuitive.
 •	Ayan Paul — Frontend Developer
