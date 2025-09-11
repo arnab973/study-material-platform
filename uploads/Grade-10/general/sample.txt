@@ -1,0 +1,14 @@
+This is a sample study material file for Grade 10.
+
+Mathematics Topics:
+- Algebra
+- Geometry
+- Trigonometry
+- Calculus basics
+
+Science Topics:
+- Physics: Mechanics, Optics
+- Chemistry: Organic, Inorganic
+- Biology: Cell structure, Genetics
+
+This file demonstrates the upload and download functionality of the EduShare platform.
