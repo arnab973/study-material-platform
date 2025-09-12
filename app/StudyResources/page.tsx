@@ -37,6 +37,12 @@ const classes = [
     path: "/StudyResources/Grade-12",
     image: school,
   },
+  {
+    grade: "Computer Science",
+    description: "Explore computer science topics and upload study materials.",
+    path: "/StudyResources/ComputerScience",
+    image: school,
+  },
   // Add more classes if needed
 ];
 

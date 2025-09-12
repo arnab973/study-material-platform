@@ -10,10 +10,11 @@ const config: Config = {
     "./src/**/*.{ts,tsx}",
   ],
   theme: {
+    
     extend: {
       colors: {
-        primary: "#06d6a0",
-        bg: "#222222",
+        primary: "#3d06d6ff",
+        bg: "#210303ff",
       },
       keyframes: {
         "accordion-down": {

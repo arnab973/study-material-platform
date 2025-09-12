@@ -40,9 +40,9 @@ const Footer: React.FC<FooterProps> = ({ isLearning }) => {
       <div className="container mx-auto flex flex-row justify-between items-center md:px-32 px-6 mt-32">
         {/* Left Section (Logo and Description) */}
         <div className="sm:w-auto w-1/2 mb-6 md:mb-0">
-          <h2 className="text-2xl font-bold text-primary font-mono">EduViti</h2>
+          <h2 className="text-2xl font-bold text-primary font-mono">Edushare</h2>
           <p className="mt-2 max-w-xs">
-            EduViti - All in One Online study platform.
+            Edushare- All in One Online study platform.
           </p>
         </div>
 
@@ -51,27 +51,27 @@ const Footer: React.FC<FooterProps> = ({ isLearning }) => {
           <ul className="text-sm text-gray-400 space-y-1">
             <li>
               <a
-                href="mailto:info@learnix.com"
+                href="edushare@gmai.com"
                 className="hover:text-white"
-                aria-label="Email EduViti"
+                aria-label="Email Edushare"
               >
-                EduVity.official@gmail.com
+                Edushare@gmail.com
               </a>
             </li>
             <li>
               <a
-                href="https://www.instagram.com/EduViti_official"
-                className="hover:text-white"
-                aria-label="Instagram EduViti"
+            
+              
+          
               >
-                Instagram - @EduViti_official
+    
               </a>
             </li>
           </ul>
           <div className="flex space-x-4 mt-4">
             <div className="flex space-x-4 mt-4">
               <Link
-                href="https://github.com/matrixdevx"
+                href="https://github.com/abcdevx"
                 target="_blank"
                 aria-label="Github"
               >
@@ -89,8 +89,8 @@ const Footer: React.FC<FooterProps> = ({ isLearning }) => {
                 </svg>
               </Link>
               <Link
-                href="mailto:eduvity.official@gmail.com"
-                aria-label="Email EduViti"
+                href="edushare@gmail.com"
+                aria-label="Email Edushare "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

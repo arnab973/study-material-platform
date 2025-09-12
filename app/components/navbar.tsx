@@ -78,16 +78,38 @@ const Navbar: React.FC<NavbarProps> = ({ homeBtn }) => {
             <SearchBar />
           </div>
         )}
-        <Link
-          href="/login"
-          className="text-teal-700 hover:text-teal-900 font-semibold px-3 py-2 rounded-md text-sm transition-colors duration-200"
-        >
-          Login
-        </Link>
+        {/* Added auth context usage */}
+        <AuthStatus />
         <Hamburger />
       </div>
     </nav>
   );
 };
+
+import { useAuth } from "@/app/context/AuthContext";
+
+function AuthStatus() {
+  const { isLoggedIn, logout } = useAuth();
+
+  if (isLoggedIn) {
+    return (
+      <button
+        onClick={logout}
+        className="text-teal-700 hover:text-teal-900 font-semibold px-3 py-2 rounded-md text-sm transition-colors duration-200"
+      >
+        Logout
+      </button>
+    );
+  } else {
+    return (
+      <Link
+        href="/login"
+        className="text-teal-700 hover:text-teal-900 font-semibold px-3 py-2 rounded-md text-sm transition-colors duration-200"
+      >
+        Login
+      </Link>
+    );
+  }
+}
 
 export default Navbar;
