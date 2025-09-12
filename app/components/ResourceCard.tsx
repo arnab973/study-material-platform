@@ -32,14 +32,19 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
   const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
 
   const handleDownload = () => {
-    // For demo purposes, we'll download a sample file
-    // In a real app, this would call the download API with specific file parameters
-    const link = document.createElement("a");
-    link.href = "/api/download?filename=sample.txt&grade=" + grade + "&subject=" + subject;
-    link.download = "sample.txt";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    if (grade === "ComputerScience") {
+      // For Computer Science, redirect to the notes page
+      window.location.href = url || "#";
+    } else {
+      // For demo purposes, we'll download a sample file
+      // In a real app, this would call the download API with specific file parameters
+      const link = document.createElement("a");
+      link.href = "/api/download?filename=sample.txt&grade=" + grade + "&subject=" + subject;
+      link.download = "sample.txt";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   return (
@@ -72,7 +77,7 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
               onClick={handleDownload}
               className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition-colors"
             >
-              Download Materials
+              {grade === "ComputerScience" ? "View Materials" : "Download Materials"}
             </Button>
           )}
           {url && (

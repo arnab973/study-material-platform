@@ -1,0 +1,6 @@
+- [ ] Update app/StudyResources/page.tsx to add Computer Science to classes array
+- [ ] Create data/classes/cs.ts with subjects and placeholder content
+- [ ] Create app/StudyResources/ComputerScience/page.tsx with sidebar and resource cards
+- [ ] Create app/api/list-files/route.ts to list uploaded files
+- [ ] Create notes pages for each subject to display uploaded materials
+- [ ] Test the upload and download functionality

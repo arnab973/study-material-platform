@@ -18,9 +18,9 @@ const BenefitsSection = () => {
         </div>
         <div className="w-full md:w-1/2 flex md:mt-10 flex-col items-center md:items-start">
           <span className="sm:text-start text-center mb-8 text-white/80 text-lg md:text-xl leading-relaxed">
-            At EduViti, we empower students by providing a comprehensive suite
-            of educational resources designed to enhance your learning
-            experience and support your learning growth.{" "}
+            EduShare is a modern platform designed to revolutionize the way students access and share learning resources. Our goal is to provide a seamless, collaborative, and smarter learning environment where students can organize study materials, exchange knowledge, and grow together.
+            What makes EduShare unique is that it’s created by students, for students. We understand real academic challenges and are building solutions that make learning not only easier but also engaging and future-ready.
+           .{" "}
             <span className="animate-ping duration-600">❘</span>
           </span>
           <Btn />

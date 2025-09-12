@@ -35,7 +35,7 @@ const CTA: React.FC = () => {
         </div>
         <div className="w-full lg:w-1/2 lg:pl-10 flex flex-col items-center lg:items-start justify-center">
           <span className="lg:text-start text-center mb-8 text-white/80 text-lg lg:text-xl leading-relaxed">
-            Join our vibrant community to access exclusive resources,
+            Join our vibrant team to access exclusive resources,
             knowledgeable books, and free courses that will drive you to explore
             everything.
           </span>
