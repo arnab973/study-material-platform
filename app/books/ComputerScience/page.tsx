@@ -1,74 +1,135 @@
+"use client";
+import React, { useEffect, useState } from "react";
 import BackButton from "@/app/components/backbtn";
-import React from "react";
-import Image from "next/image";
-import { StaticImageData } from "next/image";
-import { coming_soon_portrait } from "@/data/comingsoon";
+import UploadModal from "@/app/components/UploadModal";
+import { useAuth } from "@/app/context/AuthContext";
 
-type Book = {
-  title: string;
-  author: string;
-  description: string;
-  image: StaticImageData | string;
-};
+interface FileItem {
+  filename: string;
+  originalName: string;
+  url: string;
+}
 
-const books: Book[] = [
-  {
-    title: "Introduction to Algorithms",
-    author:
-      "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein",
-    description:
-      "A comprehensive guide to the field of algorithms, covering a wide range of topics in computer science.",
-    image: coming_soon_portrait,
-  },
-  {
-    title: "Computer Networking: A Top-Down Approach",
-    author: "James F. Kurose and Keith W. Ross",
-    description:
-      "An in-depth look at computer networking principles from a layered perspective.",
-    image: coming_soon_portrait,
-  },
-  {
-    title: "Clean Code: A Handbook of Agile Software Craftsmanship",
-    author: "Robert C. Martin",
-    description:
-      "A practical guide to writing clean, maintainable, and efficient code in software development.",
-    image: coming_soon_portrait,
-  },
-  // Add more books here as needed
-];
+const ComputerScienceBooksList = () => {
+  const [files, setFiles] = useState<FileItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
+  const { userType } = useAuth();
 
-const ComputerScienceBooksList: React.FC = () => {
+  useEffect(() => {
+    const fetchFiles = async () => {
+      try {
+        const response = await fetch("/api/list-files?grade=ComputerScience&subject=books&type=books");
+        const data = await response.json();
+        setFiles(data.files || []);
+      } catch (error) {
+        console.error("Error fetching files:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFiles();
+  }, []);
+
+  const handleDelete = async (filename: string) => {
+    if (!confirm("Are you sure you want to delete this file?")) return;
+
+    try {
+      const response = await fetch("/api/delete", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          filename,
+          grade: "ComputerScience",
+          subject: "books",
+        }),
+      });
+
+      if (response.ok) {
+        setFiles(files.filter(file => file.filename !== filename));
+        alert("File deleted successfully");
+      } else {
+        alert("Failed to delete file");
+      }
+    } catch (error) {
+      console.error("Delete error:", error);
+      alert("Error deleting file");
+    }
+  };
+
+  const refreshFiles = async () => {
+    try {
+      const response = await fetch("/api/list-files?grade=ComputerScience&subject=books&type=books");
+      const data = await response.json();
+      setFiles(data.files || []);
+    } catch (error) {
+      console.error("Error refreshing files:", error);
+    }
+  };
+
   return (
-    <div className="p-6 text-white min-h-screen">
+    <main className="p-6 min-h-screen">
       <BackButton />
-      <h1 className="text-4xl font-bold mb-12 mt-8 text-center text-white">
-        Recommended Books for{" "}
-        <span className="text-primary">Computer Science</span>
+      <h1 className="text-2xl sm:text-4xl font-bold mb-6 mt-6 text-white text-center">
+        Computer Science <span className="text-primary">Books</span>
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-auto gap-8 md:mx-2 xl:mx-28 xl:grid-cols-2 2xl:grid-cols-3">
-        {books.map((book, index) => (
-          <div
-            key={index}
-            className="bg-white/5 border border-primary/50 p-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex flex-col md:flex-col xl:flex-row items-center lg:mb-0 mb-2"
+
+      {userType === "teacher" && (
+        <div className="text-center mb-6">
+          <button
+            onClick={() => setIsUploadModalOpen(true)}
+            className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-colors"
           >
-            <Image
-              src={book.image}
-              height={200}
-              width={200}
-              alt={book.title}
-              className="h-full rounded-lg object-cover border border-primary/50 my-auto"
-            />
-            <div className="lg:ml-5 h-full lg:text-start text-center mt-2 space-y-2">
-              <h2 className="text-lg text-primary/80">{book.title}</h2>
-              <p className="text-sm text-gray-200">{book.description}</p>
-              <h3 className="text-md text-gray-300 font-mediu ">
-                ~{book.author}
-              </h3>
+            Upload Book
+          </button>
+        </div>
+      )}
+
+      {loading ? (
+        <div className="text-center text-white">Loading...</div>
+      ) : files.length === 0 ? (
+        <div className="text-center text-white">No books uploaded yet.</div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-14">
+          {files.map((file) => (
+            <div key={file.filename} className="p-4 bg-white/10 rounded-lg border border-primary/50 flex flex-col">
+              <h3 className="text-lg font-semibold text-white mb-2">{file.originalName}</h3>
+              <div className="flex space-x-2">
+                <a
+                  href={file.url}
+                  download={file.originalName}
+                  className="inline-block bg-primary text-white px-4 py-2 rounded hover:bg-primary/80 transition-colors"
+                >
+                  Download
+                </a>
+                {userType === "teacher" && (
+                  <button
+                    onClick={() => handleDelete(file.filename)}
+                    className="inline-block bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors"
+                  >
+                    Delete
+                  </button>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
+          ))}
+        </div>
+      )}
+
+      <UploadModal
+        isOpen={isUploadModalOpen}
+        onClose={() => {
+          setIsUploadModalOpen(false);
+          refreshFiles();
+        }}
+        grade="ComputerScience"
+        subject="books"
+        userType={userType as "student" | "teacher"}
+      />
+    </main>
   );
 };
 

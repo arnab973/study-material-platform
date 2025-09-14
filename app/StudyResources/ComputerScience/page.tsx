@@ -78,7 +78,7 @@ const StudySection: React.FC = () => {
               title={resource.title}
               description={resource.description}
               icon={resource.icon}
-              url={`${selected}/${resource.linkName}`}
+              url={`/StudyResources/ComputerScience/${selected}/${resource.linkName}`}
               grade="ComputerScience"
               subject={getCurrentSubject()}
               userType={userType}

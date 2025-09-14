@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const filepath = join(process.cwd(), "uploads", grade, subject, filename);
+    const filepath = join(process.cwd(), "public", "uploads", grade, subject, filename);
 
     try {
       const fileBuffer = await readFile(filepath);

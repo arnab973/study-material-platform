@@ -29,29 +29,29 @@ export const programming = {
   notes: [
     {
       name: "Introduction to Programming",
-      path: "placeholder",
+      path: "/StudyResources/ComputerScience/programming/notes/introduction-to-programming",
     },
     {
       name: "Variables and Data Types",
-      path: "placeholder",
+      path: "/StudyResources/ComputerScience/programming/notes/variables-and-data-types",
     },
     {
       name: "Control Structures",
-      path: "placeholder",
+      path: "/StudyResources/ComputerScience/programming/notes/control-structures",
     },
   ],
   pyqp: [
     {
       name: "Session 2024-2025",
-      path: "placeholder",
+      path: "/StudyResources/ComputerScience/programming/pyqp/session-2024-2025",
     },
   ],
   question_banks: [
     {
       name: "Introduction to Programming",
       sets: [
-        { name: "Set 1", path: "placeholder" },
-        { name: "Set 2", path: "placeholder" },
+        { name: "Set 1", path: "/StudyResources/ComputerScience/programming/question-banks/set-1" },
+        { name: "Set 2", path: "/StudyResources/ComputerScience/programming/question-banks/set-2" },
       ],
     },
   ],
@@ -59,7 +59,7 @@ export const programming = {
     {
       name: "Introduction to Programming",
       sets: [
-        { name: "Set 1", path: "placeholder" },
+        { name: "Set 1", path: "/StudyResources/ComputerScience/programming/sample-paper/set-1" },
       ],
     },
   ],
@@ -88,24 +88,24 @@ export const datastructures = {
   notes: [
     {
       name: "Arrays and Lists",
-      path: "placeholder",
+      path: "/StudyResources/ComputerScience/datastructures/notes/arrays-and-lists",
     },
     {
       name: "Stacks and Queues",
-      path: "placeholder",
+      path: "/StudyResources/ComputerScience/datastructures/notes/stacks-and-queues",
     },
   ],
   pyqp: [
     {
       name: "Session 2024-2025",
-      path: "placeholder",
+      path: "/StudyResources/ComputerScience/datastructures/pyqp/session-2024-2025",
     },
   ],
   question_banks: [
     {
       name: "Arrays and Lists",
       sets: [
-        { name: "Set 1", path: "placeholder" },
+        { name: "Set 1", path: "/StudyResources/ComputerScience/datastructures/question-banks/set-1" },
       ],
     },
   ],
@@ -113,7 +113,7 @@ export const datastructures = {
     {
       name: "Arrays and Lists",
       sets: [
-        { name: "Set 1", path: "placeholder" },
+        { name: "Set 1", path: "/StudyResources/ComputerScience/datastructures/sample-paper/set-1" },
       ],
     },
   ],
@@ -142,24 +142,24 @@ export const algorithms = {
   notes: [
     {
       name: "Sorting Algorithms",
-      path: "placeholder",
+      path: "/StudyResources/ComputerScience/algorithms/notes/sorting-algorithms",
     },
     {
       name: "Searching Algorithms",
-      path: "placeholder",
+      path: "/StudyResources/ComputerScience/algorithms/notes/searching-algorithms",
     },
   ],
   pyqp: [
     {
       name: "Session 2024-2025",
-      path: "placeholder",
+      path: "/StudyResources/ComputerScience/algorithms/pyqp/session-2024-2025",
     },
   ],
   question_banks: [
     {
       name: "Sorting Algorithms",
       sets: [
-        { name: "Set 1", path: "placeholder" },
+        { name: "Set 1", path: "/StudyResources/ComputerScience/algorithms/question-banks/set-1" },
       ],
     },
   ],
@@ -167,7 +167,7 @@ export const algorithms = {
     {
       name: "Sorting Algorithms",
       sets: [
-        { name: "Set 1", path: "placeholder" },
+        { name: "Set 1", path: "/StudyResources/ComputerScience/algorithms/sample-paper/set-1" },
       ],
     },
   ],
@@ -196,24 +196,24 @@ export const databases = {
   notes: [
     {
       name: "SQL Basics",
-      path: "placeholder",
+      path: "/StudyResources/ComputerScience/databases/notes/sql-basics",
     },
     {
       name: "Database Design",
-      path: "placeholder",
+      path: "/StudyResources/ComputerScience/databases/notes/database-design",
     },
   ],
   pyqp: [
     {
       name: "Session 2024-2025",
-      path: "placeholder",
+      path: "/StudyResources/ComputerScience/databases/pyqp/session-2024-2025",
     },
   ],
   question_banks: [
     {
       name: "SQL Basics",
       sets: [
-        { name: "Set 1", path: "placeholder" },
+        { name: "Set 1", path: "/StudyResources/ComputerScience/databases/question-banks/set-1" },
       ],
     },
   ],
@@ -221,7 +221,7 @@ export const databases = {
     {
       name: "SQL Basics",
       sets: [
-        { name: "Set 1", path: "placeholder" },
+        { name: "Set 1", path: "/StudyResources/ComputerScience/databases/sample-paper/set-1" },
       ],
     },
   ],
