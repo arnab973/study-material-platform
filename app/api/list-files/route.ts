@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Grade and subject are required" }, { status: 400 });
     }
 
-    const uploadDir = join(process.cwd(), "uploads", grade, subject);
+    const uploadDir = join(process.cwd(), "public", "uploads", grade, subject);
 
     try {
       const files = await readdir(uploadDir);

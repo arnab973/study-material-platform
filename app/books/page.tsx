@@ -18,37 +18,26 @@ export const metadata: Metadata = {
 
 // List of book categories with images
 const categories = [
-  { label: "Maths", path: "/books/Maths", image: maths },
+  { label: "CSE Core", path: "/books/CSE-core", image: cs },
+  { label: "CSE AI-ML", path: "/books/CSE-AI-ML", image: ds },
+  { label: "CSE DS", path: "/books/CSE-DS", image: ds },
+  { label: "CSE CS", path: "/books/CSE-CS", image: cs },
   {
-    label: "Fundamental Science",
-    path: "/books/FundamentalScience",
-    image: chemistry,
-  },
-  {
-    label: "Quantum Physics",
-    path: "/books/QuantumPhysics",
-    image: physics,
-  },
-  {
-    label: "Astronomy",
-    path: "/books/Astronomy",
-    image: astronomy,
-  },
-  {
-    label: "Engineering Physics",
-    path: "/books/EngineeringPhysics",
+    label: "Electrical Engineering",
+    path: "/books/ElectricalEngineering",
     image: engineering_physics,
   },
   {
-    label: "Computer Science",
-    path: "/books/ComputerScience",
-    image: cs,
+    label: "Biotechnology",
+    path: "/books/Biotechnology",
+    image: chemistry,
   },
   {
-    label: "Data Science",
-    path: "/books/DataScience",
-    image: ds,
+    label: "Agriculture",
+    path: "/books/Agriculture",
+    image: physics,
   },
+  { label: "Computer Science", path: "/books/ComputerScience", image: cs },
 ];
 
 const BookCategorySelector = () => {

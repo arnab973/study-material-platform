@@ -60,6 +60,8 @@ export default function UploadModal({
           "file-upload"
         ) as HTMLInputElement;
         if (fileInput) fileInput.value = "";
+        // Close modal after successful upload
+        onClose();
       } else {
         setMessage(result.error || "Upload failed");
       }
@@ -117,19 +119,19 @@ export default function UploadModal({
           )}
 
           <div className="flex space-x-3 pt-4">
-            <Button
-              onClick={handleUpload}
-              disabled={!file || uploading}
-              className="flex-1"
-            >
-              {uploading ? "Uploading..." : "Upload"}
-            </Button>
-            <Button
-              onClick={onClose}
-              className="flex-1 bg-gray-200 text-gray-800 hover:bg-gray-300"
-            >
-              Cancel
-            </Button>
+          <Button
+            onClick={handleUpload}
+            disabled={!file || uploading}
+            className="flex-1 bg-green-600 text-white hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {uploading ? "Uploading..." : "Upload"}
+          </Button>
+          <Button
+            onClick={onClose}
+            className="flex-1 bg-gray-200 text-gray-800 hover:bg-gray-300"
+          >
+            Cancel
+          </Button>
           </div>
         </div>
       </div>

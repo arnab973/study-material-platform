@@ -1,4 +1,3 @@
-// components/ResourceCard.tsx
 "use client";
 
 import React, { useState } from "react";
@@ -31,20 +30,10 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
 }) => {
   const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
 
-  const handleDownload = () => {
-    if (grade === "ComputerScience") {
-      // For Computer Science, redirect to the notes page
-      window.location.href = url || "#";
-    } else {
-      // For demo purposes, we'll download a sample file
-      // In a real app, this would call the download API with specific file parameters
-      const link = document.createElement("a");
-      link.href = "/api/download?filename=sample.txt&grade=" + grade + "&subject=" + subject;
-      link.download = "sample.txt";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
+  const handleDownload = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    // Redirect to the resource page for all grades
+    window.location.href = url || "#";
   };
 
   return (
@@ -63,7 +52,7 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
         <p className="text-gray-300 mb-4">{description}</p>
 
         {/* Action Buttons */}
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col space-y-4">
           {showUpload && (
             <Button
               onClick={() => setIsUploadModalOpen(true)}
@@ -72,22 +61,33 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
               Upload Material
             </Button>
           )}
-          {showDownload && (
+          {showUpload && (
             <Button
-              onClick={handleDownload}
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition-colors"
+              onClick={() => window.location.href = url || "#"}
+              className="w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-md transition-colors"
             >
-              {grade === "ComputerScience" ? "View Materials" : "Download Materials"}
+              Delete Material
             </Button>
           )}
-          {url && (
-            <a
-              href={url}
-              className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-md transition-colors inline-block text-center"
-            >
-              View Resources
-            </a>
-          )}
+          <div className="flex flex-col space-y-3">
+            {showDownload && (
+              <Button
+                onClick={handleDownload}
+                className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition-colors"
+              >
+                View Materials
+              </Button>
+            )}
+            {url && (
+              <a
+                href={url}
+                onClick={(event) => event.stopPropagation()}
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-md transition-colors inline-block text-center relative z-10"
+              >
+                View Resources
+              </a>
+            )}
+          </div>
         </div>
       </div>
 

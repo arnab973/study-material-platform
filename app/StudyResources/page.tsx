@@ -14,33 +14,45 @@ export const metadata: Metadata = {
 // List of classes to select from
 const classes = [
   {
-    grade: "Class 9",
-    description: "Start your journey with tailored resources for Class 9!",
-    path: "/StudyResources/Grade-9",
+    grade: "CSE Core",
+    description: "Explore core computer science engineering topics.",
+    path: "/StudyResources/CSE-core",
     image: school,
   },
   {
-    grade: "Class 10",
-    description: "Explore curated content for Class 10 students.",
-    path: "/StudyResources/Grade-10",
+    grade: "CSE AI-ML",
+    description: "Dive into Artificial Intelligence and Machine Learning.",
+    path: "/StudyResources/CSE-AI-ML",
     image: school,
   },
   {
-    grade: "Class 11",
-    description: "Deepen your knowledge with resources for Class 11.",
-    path: "/StudyResources/Grade-11",
+    grade: "CSE DS",
+    description: "Master Data Science concepts and tools.",
+    path: "/StudyResources/CSE-DS",
     image: school,
   },
   {
-    grade: "Class 12",
-    description: "Find everything you need for Class 12 studies.",
-    path: "/StudyResources/Grade-12",
+    grade: "CSE CS",
+    description: "Learn advanced computer science subjects.",
+    path: "/StudyResources/CSE-CS",
     image: school,
   },
   {
-    grade: "Computer Science",
-    description: "Explore computer science topics and upload study materials.",
-    path: "/StudyResources/ComputerScience",
+    grade: "Electrical Engineering",
+    description: "Study electrical engineering fundamentals.",
+    path: "/StudyResources/Electrical-Engineering",
+    image: school,
+  },
+  {
+    grade: "Biotechnology",
+    description: "Explore biotechnology and life sciences.",
+    path: "/StudyResources/Biotechnology",
+    image: school,
+  },
+  {
+    grade: "Agriculture",
+    description: "Learn about agricultural sciences and practices.",
+    path: "/StudyResources/Agriculture",
     image: school,
   },
   // Add more classes if needed
@@ -51,7 +63,7 @@ const ClassSelector = () => {
     <section className="min-h-screen p-6 text-white">
       <BackButton />
       <h1 className="text-4xl font-bold mb-12 mt-8 text-center">
-        Select Your Grade <span className="text-primary">to Study!</span>
+        Select Your Field <span className="text-primary">to Study!</span>
       </h1>
       <div className="grid gap-6 px-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {classes.map((item) => (

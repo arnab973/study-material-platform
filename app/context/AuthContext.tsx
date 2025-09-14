@@ -10,7 +10,7 @@ interface AuthContextType {
   isLoggedIn: boolean;
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [userType, setUserType] = useState<"student" | "teacher" | null>(null);
